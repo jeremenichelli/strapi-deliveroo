@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "author": "Jeremias Menichelli",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
     "gql": "^1.1.2",
     "graphql": "^14.4.2",
     "next": "^9.0.2",
