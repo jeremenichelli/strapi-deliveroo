@@ -23,10 +23,9 @@ export const strapiLogin = (email, password) => {
     return;
   }
   // Get a token
-  strapi.login(email, password).then(res => {
-    setToken(res);
-  });
-  return Promise.resolve();
+  return strapi.login(email, password)
+    .then(res => setToken(res))
+    .catch(e => console.error(e))
 };
 
 export const setToken = token => {
