@@ -18,6 +18,7 @@
     "eslint-plugin-react": "^7.14.0"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "knex": "latest",
     "lodash": "^4.17.5",
     "sqlite3": "latest",
@@ -32,7 +33,8 @@
     "strapi-plugin-settings-manager": "3.0.0-beta.13",
     "strapi-plugin-upload": "3.0.0-beta.13",
     "strapi-plugin-users-permissions": "3.0.0-beta.13",
-    "strapi-utils": "3.0.0-beta.13"
+    "strapi-utils": "3.0.0-beta.13",
+    "stripe": "^7.4.0"
   },
   "author": {
     "name": "A Strapi developer"

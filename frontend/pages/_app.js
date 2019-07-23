@@ -1,6 +1,8 @@
 import Layout from "../components/Layout";
 import withData from "../lib/apollo";
-
+import AppProvider from "../components/AppProvider";
+import defaultPage from "../hocs/defaultPage";
+import { compose } from "recompose";
 import App, { Container } from "next/app";
 import React from "react";
 
@@ -17,9 +19,11 @@ class MyApp extends App {
     const { Component, pageProps, isAuthenticated, ctx } = this.props;
     return (
       <Container>
-        <Layout isAuthenticated={isAuthenticated} {...pageProps}>
-          <Component {...pageProps} />
-        </Layout>
+        <AppProvider>
+          <Layout isAuthenticated={isAuthenticated} {...pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </AppProvider>
         <style jsx global>
           {`
             a {
@@ -44,4 +48,5 @@ class MyApp extends App {
     );
   }
 }
+
 export default withData(MyApp);
